@@ -24,7 +24,7 @@ If you ...
  * have found a bug...
  * need something else...
 
-Make an issue or a pull request or reach out to me via email. 
+Make an [issue](https://github.com/andreasmarkussen/webdriver-reuse-session/issues/new) or a [pull request](https://github.com/andreasmarkussen/webdriver-reuse-session/compare) or reach out to me via email - andreas@markussen.dk . 
 
 ## Installation
 
@@ -43,12 +43,6 @@ npm webdriver-manager start
 ```
 
 2. Start the reuse sessions script
-
-```sh
-webdriver-reuse-session
-```
-
-
 
 ```sh
 webdriver-reuse-session
@@ -77,9 +71,7 @@ webdriver-reuse-session
 
 This is my first package on NPMJS, so feel free to give me feedback and log issues on Github
 
-With wishes of faster testing for all of us, 
-
-br,
+With wishes of faster testing for all of us,
 
 Andreas
 
