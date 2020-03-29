@@ -1,8 +1,11 @@
-# webdriver-reuse-session
-Manage Webdriver/Selenium/Chromedriver sessions and make sessions id's available for e.g. Protractor and other TDD and BBD tools. 
+# WebDriver Reuse Session
+
+Manage Webdriver, Selenium or ChromeDriver sessions and make sessions id's available for [Protractor](https://www.protractortest.org) and other TDD and BBD tools. 
 
 ## Speed up your tests
 
+The normal approach is that every test run starts a new browser, which often takes between 5 to 10 seconds. 
+Using [webdriver-reuse-session]()
 Using this can take between 5-10 seconds of your start-up time, and sometimes even more. 
 If you have an authentication step, then this can be added. 
 I worked a case, where I could cut off 30 seconds of overhead, every time I wanted to run a 5 seconds test. 
