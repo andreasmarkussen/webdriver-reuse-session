@@ -53,10 +53,15 @@ const logWarning = (...args: any[]) => logOut("WARN", ...args);
 const logDebug = (...args: any[]) => logOut("DEBUG", ...args);
 const logVerbose = (...args: any[]) => logOut("VERBOSE", ...args);
 
-const directScript = process.argv.length > 1 && process.argv[1].includes(__filename);
+const isArgumentFound = (argName: string): boolean =>
+  process.argv.filter(arg => arg.includes(argName)).length > 0
+
+
+const directScript = process.argv.length > 1 && process.argv[1].includes('webdriver-reuse-session');
 if (directScript) {
-  const verbose = process.argv.filter(arg => arg.includes("verbose")).length;
-  if (verbose > 0) {
+  const verboseMode = isArgumentFound('verbose')
+//  const verbose = process.argv.filter(arg => arg.includes("verbose")).length;
+  if (verboseMode) {
     logLevel = "VERBOSE";
     logVerbose("OK - Mode is set to verbose");
     logDebug("Direct Script", directScript);
@@ -65,8 +70,11 @@ if (directScript) {
   logDebug(`Process ${process.execPath} ${process.argv} `);
 }
 
-const sessionIdFileName = "./.seleniumSessionId.dat";
+const sessionIdFileName = "./.seleniumSessionId.txt";
 
+/** Returns the sessionId from the file, if defined
+ * If no file is found, or it is mallformed, it will return undefined
+ */
 export function getSessionIdFromFileSync() {
   try {
     const sessionId = fs.readFileSync(sessionIdFileName, "utf8");

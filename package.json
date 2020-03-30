@@ -1,6 +1,6 @@
 {
   "name": "webdriver-reuse-session",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Manage Webdriver sessions and make sessions id's available for e.g. Protractor and other TDD and BBD tools",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

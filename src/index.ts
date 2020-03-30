@@ -1,2 +1,2 @@
-import { getChromeSessionId, getSessionIdFromFileSync } from './webdriver-session'
+import { getChromeSessionId, getSessionIdFromFileSync } from './webdriver-reuse-session'
 export { getChromeSessionId, getSessionIdFromFileSync } 

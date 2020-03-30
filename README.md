@@ -1,6 +1,25 @@
 # WebDriver Reuse Session
 
-Manage Webdriver, Selenium or ChromeDriver sessions and make sessions id's available for [Protractor](https://www.protractortest.org) and other TDD and BBD tools. 
+## TL;DR
+
+1) run 'webdriver-reuse-browser' - get the session id from a browser that can be reused
+2) insert the session id in the config file or via the command line
+
+## The Why?
+
+*If you want better, faster and more enjoyable test, then this is the place to be*
+
+ * **Better** - because the more times you run your test, the more bugs you can find
+ * **Faster** - because browser start-up time, cache warm-up (loading of images and static JS), authentication and similar is removed or reduced
+ * **More Enjoyable** - because slow test and long feedback times, is the oposite of [Flow and Programmer Happiness](https://www.youtube.com/watch?v=AJ7u_Z-TS-A&feature=youtu.be&t=116). 
+
+Protractor is a nice an well-behaving tool, so it closes the browsers it creates, but sometimes you want to keep it open for debugging purposes or for speeding up the next test. 
+
+And Protractor actually supports attaching to browsers, but it needs some manual to start the browser. 
+
+This tool can.. 
+
+Start Webdriver, Selenium or ChromeDriver sessions and make sessions id's available for [Protractor](https://www.protractortest.org) and similar Web Browser Test Automation Frameworks
 
 ## Speed up your tests
 
@@ -37,9 +56,13 @@ npm install webdriver-reuse-session
 
 ## Usage
 
-### Start a browser or find a Chrome Browser
+The 'webdriver-reuse-session' script can be used both in a manual mode and in an automatic mode.
 
-1. Start Webdriver-manager or a raw selenium
+### Manual Approach
+
+#### Start a browser or find a Chrome Browser, in the manual approach
+
+1. Start Webdriver-manager or a raw selenium instance
 
 ```sh
 npm webdriver-manager start
@@ -51,12 +74,29 @@ npm webdriver-manager start
 webdriver-reuse-session
 ```
 
-### From your test tool
+3. Take a note of the session id
+
+#### From your test tool
+
+1. Setup your script to use a local host Selenium
+  
+    ```javascript
+    /** in your protractor.conf.js or similar config object*/
+    directConnect: undefined,  // can be omitted, but just to show that directConnect must not be set
+    seleniumAddress: 'http://localhost:4444/wd/hub',
+    ```
+
+2. Use the SessionID in the command line
+
+    protractor --seleniumSessionId=6aec0d5861daa54d0b9be17ec47bea70
+   
+    
+### The automatic approach
 
 1. Get the SessionID
   
     ```javascript
-    const sessionId = fs.readFileSync('.seleniumSessionId.dat')
+    const sessionIdFromFile = fs.readFileSync('.seleniumSessionId.txt')
     ```
 
 2. Use the SessionID
@@ -69,6 +109,16 @@ webdriver-reuse-session
     seleniumSessionId: sessionIdFromFile,
     ```
 
+
+## Questions and Answers
+
+### What Test runners will this work with
+
+It is independent of the test runner, it depends on how you define your Selenium Session ID. 
+
+### Does this work with Cucumber
+
+You can use this with Cucumber, Mocha, Jest and other test automation frameworks
 
 ## Feedback and Issues
 
