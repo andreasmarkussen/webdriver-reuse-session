@@ -1,8 +1,9 @@
 # Webdriver Reuse Session 
 
-  ´´´
-    npx webdriver-reuse-session 
-  ´´´
+´´´sh
+npx webdriver-reuse-session 
+´´´
+
 And you are good to go! Or [head over to the documentation](https://github.com/andreasmarkussen/webdriver-reuse-session/blob/master/README.md)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4PzpztFJZP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
