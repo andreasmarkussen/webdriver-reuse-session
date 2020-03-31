@@ -126,5 +126,5 @@ This is my first package on NPMJS, so feel free to give me feedback and log issu
 
 With wishes of faster testing for all of us,
 
-Andreas
+Andreas M
 
