@@ -1,0 +1,17 @@
+{
+  "name": "webdriver-reuse-session-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "webdriver-manager update",
+    "start-reuse": "webdriver-reuse-session start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webdriver-manager": "^12.1.8",
+    "webdriver-reuse-session": "0.0.3"
+  }
+}
