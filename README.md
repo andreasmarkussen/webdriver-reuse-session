@@ -65,7 +65,7 @@ The 'webdriver-reuse-session' script can be used both in a manual mode and in an
 1. Start Webdriver-manager or a raw selenium instance
 
 ```sh
-npm webdriver-manager start
+npx webdriver-manager start
 ```
 
 2. Start the reuse sessions script
