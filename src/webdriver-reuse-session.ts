@@ -146,7 +146,8 @@ async function isTheChromeSessionAlive(sessionId: string) {
         logError("The chrome session did not reply success", chromeResponse.data);
         resolve(false);
       }
-    } catch (error) {
+    } catch (err) {
+      const error = err as Error;  
       logDebug(`Chrome alive check failed for session '${sessionId}' - ERROR: `, error.message);
       resolve(false);
     }
