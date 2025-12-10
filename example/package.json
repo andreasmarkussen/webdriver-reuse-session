@@ -12,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "webdriver-manager": "^12.1.8",
-    "webdriver-reuse-session": "0.0.3"
+    "webdriver-reuse-session": "0.1.2"
   }
 }
